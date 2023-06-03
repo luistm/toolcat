@@ -26,6 +26,7 @@ packages = [{ include = "toolcat", from = "src" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 toml = "^0.10.2"
+sqlalchemy = "2.0.15"
 
 [tool.poetry.group.dev.dependencies]
 bandit = { extras = ["toml"], version = "^1.7.5" }
