@@ -34,7 +34,7 @@ integration-tests: ## Runs the integration tests
 acceptance-tests: ## Runs the acceptance tests
 	poetry run pytest ./features  -svv
 	
-test: unit-tests integration-tests acceptance-tests  ## Runs all the tests
+tests: unit-tests integration-tests acceptance-tests  ## Runs all the tests
 
 coverage: ## Shows coverage in the browser
 	poetry run coverage run -m pytest .
@@ -47,6 +47,14 @@ future: ## Tests the code against multiple python versions
 	-rm requirements.txt
 
 build:  ## Builds this project into a package
+	poetry install	# This is needed to update the version in pyproject.toml
+	poetry run python -m toolcat.project update_version_in_pyproject_toml $(shell poetry version patch)
 	poetry build
+
+publish: setup check tests build ## Publish the package to the PyPi
+	$(eval VERSION=$(shell grep name -A 1 pyproject.toml | grep "version" | cut -d "\"" -f 2))
+	git commit -a -m "Release version $(VERSION)"
+	poetry publish --build
+	git push origin main
 
 all: clean setup check test future build deps-outdated
