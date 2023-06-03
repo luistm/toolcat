@@ -14,21 +14,20 @@ ignore_missing_imports = true
 # https://stackoverflow.com/questions/62265366/does-mypy-only-type-check-a-function-if-it-declares-a-return-type
 check_untyped_defs = true
 
-
 [tool.poetry]
-name = "cakemold"
+name = "toolcat"
 version = "0.0.1"
-description = "Cake Mold is a template to build python projects"
+description = "Essential Libraries and Tools for Streamlined Development"
 authors = ["Luís Miranda <luistm@gmail.com>"]
 license = "The Unlicence"
 readme = "README.md"
-packages = [{include = "cakemold", from = "src"}]
+packages = [{ include = "toolcat", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "3.10.10"
 
 [tool.poetry.group.dev.dependencies]
-bandit = {extras = ["toml"], version = "^1.7.5"}
+bandit = { extras = ["toml"], version = "^1.7.5" }
 behave = "^1.2.6"
 black = "^23.3.0"
 coverage = "^7.2.5"
@@ -42,9 +41,4 @@ pytest-xdist = "^3.3.1"
 pytest-bdd = "^6.1.1"
 
 [tool.pytest.ini_options]
-markers = [
-    "integration: tags a test as integration tests",
-]
-
-
-
+markers = ["integration: tags a test as integration tests"]

@@ -1,6 +1,6 @@
-# Cake Mold
+# Tool Cat
 
-Cake Mold is a template to build python projects.
+Essential Libraries and Tools for Streamlined Development
 
 ## Requirements
 
