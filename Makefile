@@ -26,7 +26,7 @@ check: ## Runs static checks on the code
 	poetry run pre-commit run --all
 
 unit-tests: ## Runs the unit tests
-	poetry run pytest ./src  -svv -m "not integration"
+	poetry run pytest ./src  -svv -m "not integration" -n 4
 
 integration-tests: ## Runs the integration tests
 	# poetry run pytest ./src  -svv -m "integration"
