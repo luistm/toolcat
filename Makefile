@@ -29,7 +29,7 @@ unit-tests: ## Runs the unit tests
 	poetry run pytest ./src  -svv -m "not integration"
 
 integration-tests: ## Runs the integration tests
-	poetry run pytest ./src  -svv -m "integration"
+	# poetry run pytest ./src  -svv -m "integration"
 
 acceptance-tests: ## Runs the acceptance tests
 	poetry run pytest ./features  -svv

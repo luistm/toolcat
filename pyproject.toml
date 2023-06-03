@@ -25,6 +25,7 @@ packages = [{ include = "toolcat", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "3.10.10"
+toml = "^0.10.2"
 
 [tool.poetry.group.dev.dependencies]
 bandit = { extras = ["toml"], version = "^1.7.5" }
@@ -39,6 +40,7 @@ pre-commit = "^3.3.2"
 pytest = "^7.3.1"
 pytest-xdist = "^3.3.1"
 pytest-bdd = "^6.1.1"
+types-toml = "^0.10.8.6"
 
 [tool.pytest.ini_options]
 markers = ["integration: tags a test as integration tests"]
