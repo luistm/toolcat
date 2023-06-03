@@ -1,0 +1,35 @@
+default_language_version:
+  python: python3
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: poetry run isort
+        language: system
+        types: [python]
+      - id: black
+        name: black
+        entry: poetry run black
+        language: system
+        types: [python]
+        args: ["-l", "120"]
+      - id: flake8
+        name: flake8
+        entry: poetry run flake8
+        language: system
+        types: [python]
+        args: ["--max-line-length", "120"]
+      - id: bandit
+        name: bandit
+        entry: poetry run bandit
+        language: system
+        args: ["-c", "pyproject.toml"]
+        types: [python]
+      - id: mypy
+        name: mypy
+        entry: poetry run mypy
+        language: system
+        types: [python]
+        args: ["--config-file", "pyproject.toml"]
+
