@@ -57,4 +57,4 @@ publish: setup check tests build ## Publish the package to the PyPi
 	poetry publish --build
 	git push origin main
 
-all: clean setup check test future build deps-outdated
+all: clean setup check tests future build deps-outdated
