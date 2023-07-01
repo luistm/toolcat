@@ -1,3 +1,4 @@
+import importlib.metadata
 from pathlib import Path
 
 import toml
@@ -20,3 +21,12 @@ def update_version_in_pyproject_toml(version: str, pyproject_path: str) -> None:
 
     with open(pyproject_toml_path, "w") as f:
         toml.dump(pyproject_toml, f)
+
+
+def summary(package_name):
+    """
+    Finds the summary for a package.
+    """
+    package = importlib.metadata.metadata(package_name)
+    description = package["Summary"]
+    return description
