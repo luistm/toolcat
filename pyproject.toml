@@ -16,7 +16,7 @@ check_untyped_defs = true
 
 [tool.poetry]
 name = "toolcat"
-version = "0.0.4"
+version = "0.0.5"
 description = "Essential Libraries and Tools for Streamlined Development"
 authors = ["Luís Miranda <luistm@gmail.com>"]
 license = "The Unlicence"
